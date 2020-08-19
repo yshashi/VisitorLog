@@ -1,0 +1,12 @@
+a{
+    font-size: 20px;
+}
+.NavItem div{
+    position: absolute;
+    top: 1;
+    right: 0;
+    
+}
+a:hover {
+    color: rgb(44, 44, 233);
+  }
