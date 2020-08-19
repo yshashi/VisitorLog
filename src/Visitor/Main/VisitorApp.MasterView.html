@@ -1,0 +1,75 @@
+<!-- 
+<table style="background-color: lightblue; border-color: blue; border-style: solid; height:80vh; width: 100%;">
+    <tr align = "Center">
+        
+    </tr>
+    <tr bordercolor = "red">
+        <td  style="position: static; vertical-align: top;">
+          <ul>
+           <li><a   [routerLink] = "['Visitor']"><b>Visitor</b></a></li> 
+            <li><a  [routerLink] = "['LatestNews']"><b>News</b></a></li>
+        </ul> 
+        </td>
+
+        <td>
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+        </td>
+
+    </tr>
+    <tr align="Center">
+        <td>This is my @Footer</td>
+    </tr>
+</table> -->
+
+
+
+<mat-toolbar color="warn">
+    <mat-toolbar-row>
+     
+      
+      <img style="width: 120px; height: 70px;" src="assets/img/vis.png">
+      <span class="menu-spacer"></span>
+      <div class="NavItem" >
+          <div>
+            <a  mat-button [routerLink]="'/Visitor'"> Visitor </a>
+            <a  mat-button [routerLink]="'/LatestNews'"> Latest News </a>
+          </div>
+        
+      </div>
+    </mat-toolbar-row>
+  
+    
+  </mat-toolbar>
+
+  <div>
+    <router-outlet></router-outlet>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+<div style="background-color: burlywood;">
+    <h1 style="text-align: center;">Visitor Log</h1>
+<div>
+   <form  [formGroup] = "VisitorValidate">
+<label>Name  :</label>           <input formControlName="Name" type="text" /> 
+<label>Email :</label>           <input formControlName="Email" type="text"/>
+<label>Type of Visit :</label>
+   <select formControlName="Typeofvisit" id="TOV" name="typeofvisit">
+    <option  value="meeting">Meeting</option>
+    <option  value="delivery">Delivery</option>
+    <option  value="personal">Personal</option>
+</select>
+<label>Person to visit :</label> <input formControlName="Persontovisit" type="text" />
+<label>Date :</label>            <input formControlName="Date" type="date" />
+<label>Time of Entry :</label>   <input formControlName="Timeofentry" type="time" />
+<label>Time of exit :</label>    <input formControlName="Timeofexit" type="time" /> &nbsp;&nbsp;
+<button class="btn btn-primary" style="margin: 20px;" (click) = "Submit()" type="submit">Submit</button>
+<button class="btn btn-danger" (click) = "GetfromServer()" type="submit">Visitor Logs</button>
+
+    </form>
+ </div> <br>
+
+<b>Visitor Log Details :</b>
+</div>
+<hr>
+<ag-grid-angular 
+    style="width: 73%; height: 500px; " 
+    
+    class="ag-theme-balham"
+    [rowData]="rowData" 
+    [columnDefs]="columnDefs">
+    
+</ag-grid-angular>
+<!-- <table id="users"
+    <tr>
+      <th *ngFor="let col of columnDefs">
+        {{col.headerName}}
+      </th>
+    </tr>
+    <tr *ngFor="let colObj of rowData">
+      <td *ngFor="let col of field">
+        {{colObj[col]}}
+      </td>
+    </tr>
+  
+  </table> -->
+
+
+
+ 
+

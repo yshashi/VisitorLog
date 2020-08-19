@@ -1,0 +1,49 @@
+<div style="background-color: rgb(248, 235, 218);">
+<div class="col-md-12">
+  <h1 style="text-align: center;">Latest News</h1>
+  
+</div>
+<hr>>
+
+<div *ngFor="let row of lastestNewsList">
+
+  <div style="    margin-top: 10px;
+      margin-left: 40px;
+      font-weight: normal;
+      color:black;
+           ">
+      <b>
+               <span style="   color: blue;">{{row.source.name}}</span>:&nbsp;<span>{{row.author}}</span>
+               {{row.publishedAt | date:'medium'}}
+           </b>
+      <br>
+      <br>
+      <b>{{row.title}}</b>
+      <br>
+      <br>
+     
+      <div style="color: black;
+           margin-right: 10px;
+           background-color: rgb(248, 235, 218);
+           text-align: left;">
+          <div  style="    height: 6em;">
+           
+             
+                  <span >{{row.description}}</span>
+
+             
+              <span >
+                  <a style="    background: none;
+                  border: none;
+                  color:blue;
+                  text-align: left;
+                  font-size: 1.2em;
+                  outline: none;" type="button" href="{{row.url}}" target="_blank">&nbsp;read more... </a></span>
+          </div>
+      </div>
+
+  </div>
+  <div style="border-top: 1px dotted #636363;"></div>
+
+</div>
+</div>
