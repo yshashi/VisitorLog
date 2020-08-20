@@ -2,7 +2,7 @@
     <h1 style="text-align: center;">Visitor Log</h1>
 <div>
    <form  [formGroup] = "VisitorValidate">
-<label>Name  :</label>           <input formControlName="Name" type="text" /> 
+<label>Name  :</label>           <input formControlName="Name" type="text" />
 <label>Email :</label>           <input formControlName="Email" type="text"/>
 <label>Type of Visit :</label>
    <select formControlName="Typeofvisit" id="TOV" name="typeofvisit">
@@ -23,13 +23,13 @@
 <b>Visitor Log Details :</b>
 </div>
 <hr>
-<ag-grid-angular 
-    style="width: 73%; height: 500px; " 
-    
+<ag-grid-angular
+    style="width: 73%; height: 500px; "
+    [loading]="loading"
     class="ag-theme-balham"
-    [rowData]="rowData" 
+    [rowData]="rowData"
     [columnDefs]="columnDefs">
-    
+
 </ag-grid-angular>
 <!-- <table id="users"
     <tr>
@@ -42,10 +42,5 @@
         {{colObj[col]}}
       </td>
     </tr>
-  
+
   </table> -->
-
-
-
- 
-

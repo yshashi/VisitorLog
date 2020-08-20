@@ -1,7 +1,7 @@
 <div style="background-color: rgb(248, 235, 218);">
 <div class="col-md-12">
   <h1 style="text-align: center;">Latest News</h1>
-  
+
 </div>
 <hr>>
 
@@ -21,24 +21,26 @@
       <b>{{row.title}}</b>
       <br>
       <br>
-     
+
       <div style="color: black;
            margin-right: 10px;
            background-color: rgb(248, 235, 218);
            text-align: left;">
           <div  style="    height: 6em;">
-           
-             
+
+
                   <span >{{row.description}}</span>
 
-             
+             <img [src]="row.urlToImage" style="    height: 1em;
+             width: 1em;" alt="">
               <span >
                   <a style="    background: none;
                   border: none;
                   color:blue;
                   text-align: left;
                   font-size: 1.2em;
-                  outline: none;" type="button" href="{{row.url}}" target="_blank">&nbsp;read more... </a></span>
+                  outline: none;" type="button" href="{{row.url}}" target="_blank">&nbsp;read more... </a>
+                  </span>
           </div>
       </div>
 

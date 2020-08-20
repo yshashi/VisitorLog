@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder ,FormControl,Validators} from '@angular/forms';
 
 
 @Component({
-  
+
   templateUrl: './VisitorApp.VisitorlogComponent.html',
   styleUrls: ['./VisitorApp.VisitorlogComponent.css']
 })
@@ -13,9 +13,10 @@ export class VisitorComponent implements OnInit {
   //  VisitorModel : Visitor = new Visitor;
   //  VisitorModels : Array<Visitor> = new Array<Visitor>();
 
-   public VisitorValidate : FormGroup = null;  // step 1 
+   public VisitorValidate : FormGroup = null;  // step 1
+   public loading:boolean = false;
    constructor(public formBuilder : FormBuilder, public http : HttpClient){  //Step 2
- 
+    //this/.GetfromServer()
    }
    ngOnInit() {                                                             // For Validation step 3 wrtie all the labels whose validation required
     this.VisitorValidate = this.formBuilder.group({
@@ -28,9 +29,9 @@ export class VisitorComponent implements OnInit {
       Timeofexit:[''],
 
     })
-    
-    
-    
+
+
+
   }
   columnDefs = [
     {headerName: 'Name',  field: 'Name', sortable: true, filter: true,editable : true,cellStyle: {color: 'black', 'background-color': 'beige'}},
@@ -40,33 +41,34 @@ export class VisitorComponent implements OnInit {
     {headerName: 'Date', field: 'Date', sortable: true, filter: true,cellStyle: {color: 'black', 'background-color': 'beige'}},
     {headerName: 'Time of Entry', field: 'Timeofentry', sortable: true, filter: true,cellStyle: {color: 'black', 'background-color': 'beige'}},
     {headerName: 'Time of Exit ', field: 'Timeofexit', sortable: true, filter: true, cellStyle: {color: 'black', 'background-color': 'beige'}}
-    
+
 ];
 rowData: any;
 
 
-  
+
 
   Submit() {                                                               // Foor Validation step 5 logic for submit button
-    
-  
+
+
     if(this.VisitorValidate.valid){
-      this.http.post("http://localhost:3000/Customers", this.VisitorValidate.value).subscribe(res=>alert("Record sent"),res=> console.debug(res.json()));
-    
+      this.http.post("https://localhost:3000/Customers", this.VisitorValidate.value).subscribe(res=>alert("Record sent"),res=> console.debug(res.json()));
+
     this.VisitorValidate.reset()
     }
     else{
       alert("Name is required");
     }
-    
+
   }
-  
+
 
 
   GetfromServer(){
-  this.http.get("http://localhost:3000/Customers").subscribe(res =>{this.rowData = res;});
-  
-    
+    this.loading = true;
+  this.http.get("https://localhost:3000/Customers").subscribe(res =>{this.rowData = res;this.loading = false;});
+
+
   }
 
 }

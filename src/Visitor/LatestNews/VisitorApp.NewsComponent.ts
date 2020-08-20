@@ -15,6 +15,6 @@ export class NewsComponent {
             }, err => {
                 console.log(err);
             })
-        
+
     }
 }
