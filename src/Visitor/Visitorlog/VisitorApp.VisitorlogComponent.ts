@@ -52,7 +52,7 @@ rowData: any;
 
 
     if(this.VisitorValidate.valid){
-      this.http.post("https://localhost:3000/Customers", this.VisitorValidate.value).subscribe(res=>alert("Record sent"),res=> console.debug(res.json()));
+      this.http.post("http://localhost:3000/Customers", this.VisitorValidate.value).subscribe(res=>alert("Record sent"),res=> console.debug(res.json()));
 
     this.VisitorValidate.reset()
     }
@@ -66,7 +66,7 @@ rowData: any;
 
   GetfromServer(){
     this.loading = true;
-  this.http.get("https://localhost:3000/Customers").subscribe(res =>{this.rowData = res;this.loading = false;});
+  this.http.get("http://localhost:3000/Customers").subscribe(res =>{this.rowData = res;this.loading = false;});
 
 
   }
