@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { HttpClient } from '@angular/common/http';
-import * as moment from 'moment'
+
 @Component({
     templateUrl: './VisitorApp.NewsComponent.html'
 })
