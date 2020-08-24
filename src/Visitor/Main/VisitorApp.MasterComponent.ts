@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {Chart} from 'chart.js'
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./VisitorApp.MasterComponent.css']
   
 })
+
 export class MasterComponent  {
+  
 }
